@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <artifactId>l2fprod-common-all</artifactId>
+    <groupId>com.l2fprod.common</groupId>
+    <version>7.4-SNAPSHOT</version>
+    <relativePath>../../pom.xml</relativePath>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.l2fprod.common</groupId>
+  <artifactId>l2fprod-common-tasks</artifactId>
+  <name>tasks</name>
+  <version>7.4-SNAPSHOT</version>
+  <description>tasks</description>
+  <build>
+    <sourceDirectory>target/filteredsrc</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>../../src/java/tasks</directory>
+        <includes>
+          <include>**/*.gif</include>
+          <include>**/*.jpg</include>
+          <include>**/*.png</include>
+          <include>**/*.properties</include>
+        </includes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>process-sources</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <tasks>
+                <filter token="VERSION" value="${project.version}" />
+                <filter token="PROJECT.FULLNAME" value="L2FProd.com Common Components" />
+                <filter token="PROJECT.SHORTNAME" value="l2fprod-common" />
+                <filter token="YEAR" value="2005-2006" />
+                <mkdir dir="${basedir}/target/filteredsrc" />
+                <copy filtering="on" todir="${basedir}/target/filteredsrc">
+                  <fileset includes="**/*.java" dir="../../src/java/${project.name}" />
+                </copy>
+              </tasks>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <compress>true</compress>
+            <manifest>
+              <mainClass>com.l2fprod.common.demo.Main</mainClass>
+              <addExtensions>false</addExtensions>
+              <addClasspath>true</addClasspath>
+            </manifest>
+            <manifestSections>
+              <manifestSection>
+                <name>com/l2fprod/common/swing/JLinkButton.class</name>
+                <manifestEntries>
+                  <Java-Bean>True</Java-Bean>
+                </manifestEntries>
+              </manifestSection>
+              <manifestSection>
+                <name>com/l2fprod/common/swing/JTaskPane.class</name>
+                <manifestEntries>
+                  <Java-Bean>True</Java-Bean>
+                </manifestEntries>
+              </manifestSection>
+              <manifestSection>
+                <name>com/l2fprod/common/swing/JTaskPaneGroup.class</name>
+                <manifestEntries>
+                  <Java-Bean>True</Java-Bean>
+                </manifestEntries>
+              </manifestSection>
+            </manifestSections>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
