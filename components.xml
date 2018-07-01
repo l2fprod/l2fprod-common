@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<components>
+
+  <component name="buttonbar"
+             mainclass="com.l2fprod.common.demo.Main">
+    <depend>shared</depend>
+    <fileset dir="src/java/buttonbar" includes="**" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/*ButtonBar*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/*Blue*UI*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/*Addon*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/tree/*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/*PercentLayout*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/OS*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/ResourceManager*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/demo/Main*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/Version.java" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <resources>
+      <fileset dir="src/java/buttonbar" includes="**/*.gif,**/*.png,**/*.properties"/>
+      <fileset dir="src/java/shared" includes="**/util/AllRB*.properties,**/demo/*.png,**/demo/*.html"/>
+    </resources>
+    <javadoc>
+      <include name="com/l2fprod/common/swing/JButtonBar.java"/>
+    </javadoc>
+    <bean name="com/l2fprod/common/swing/JButtonBar.class"/>
+  </component>
+
+  <component name="directorychooser"
+	     mainclass="com.l2fprod.common.demo.ChooseDirectory">
+    <depend>shared</depend>
+    <fileset dir="src/java/directorychooser" includes="**" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/*DirectoryChooser*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/tree/*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/*Addon*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/LookAndFeelTweaks*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/*Layout*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/OS*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/ResourceManager*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/demo/Main*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/Version.java" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <resources>
+      <fileset dir="src/java/directorychooser" includes="**/*.gif,**/*.png,**/*.properties"/>
+      <fileset dir="src/java/shared" includes="**/*DirectoryChooser*.properties,**/util/AllRB*.properties,**/demo/*.png,**/demo/*.html"/>
+    </resources>
+    <javadoc>
+      <include name="com/l2fprod/common/swing/JDirectoryChooser.java"/>
+    </javadoc>
+    <bean name="com/l2fprod/common/swing/JDirectoryChooser.class"/>
+  </component>
+
+  <component name="fontchooser"
+	     mainclass="com.l2fprod.common.demo.ChooseFont">
+    <depend>shared</depend>
+    <fileset dir="src/java/fontchooser" includes="**" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/demo/Main*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/Version.java" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <resources>
+      <fileset dir="src/java/fontchooser" includes="**/*.gif,**/*.png,**/*.properties"/>
+      <fileset dir="src/java/shared" includes="**/*.gif,**/*.png,**/*.properties,**/demo/*.png,**/demo/*.html"/>
+    </resources>
+    <javadoc>
+    </javadoc>
+    <bean name="com/l2fprod/common/swing/JFontChooser.class"/>
+  </component>
+
+  <component name="outlookbar"
+	     mainclass="com.l2fprod.common.demo.Main">
+    <depend>shared</depend>
+    <fileset dir="src/java/outlookbar" includes="**" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/*OutlookBar*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/LookAndFeelTweaks*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/*Addon*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/*Layout*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/OS*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/ResourceManager*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/demo/Main*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/Version.java" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/JVM.java" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <resources>
+      <fileset dir="src/java/outlookbar" includes="**/*.gif,**/*.png,**/*.properties"/>
+      <fileset dir="src/java/shared" includes="**/*OutlookBar*.properties,**/util/AllRB*.properties,**/demo/*.png,**/demo/*.html"/>
+    </resources>
+    <javadoc>
+      <include name="com/l2fprod/common/swing/JOutlookBar.java"/>
+    </javadoc>
+    <bean name="com/l2fprod/common/swing/JOutlookBar.class"/>
+  </component>
+
+  <component name="sandbox">
+    <fileset dir="src/java/sandbox" includes="**" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/demo/Main*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/Version.java" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <resources>
+      <fileset dir="src/java/sandbox" includes="**/*.gif,**/*.png,**/*.properties"/>
+      <fileset dir="src/java/shared" includes="**/*.gif,**/*.png,**/*.properties,**/demo/*.png,**/demo/*.html"/>
+    </resources>
+    <javadoc>
+    </javadoc>
+  </component>
+
+  <component name="shared">
+    <fileset dir="src/java/shared" includes="**" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <resources>
+      <fileset dir="src/java/shared" includes="**/*.gif,**/*.png,**/*.properties,**/demo/*.png,**/demo/*.html"/>
+    </resources>
+    <javadoc>
+    </javadoc>
+  </component>
+
+  <component name="sheet"
+             mainclass="com.l2fprod.common.demo.Main">
+    <depend>shared</depend>
+    <external-depend groupId="com.toedter" artifactId="jcalendar" version="1.2.2"/>
+    <external-depend groupId="net.sf.nachocalendar" artifactId="nachocalendar" version="0.21"/>
+    <fileset dir="src/java/sheet" includes="**" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/demo/Main*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/Version.java" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <resources>
+      <fileset dir="src/java/sheet" includes="**/*.gif,**/*.png,**/*.properties"/>
+      <fileset dir="src/java/shared" includes="**/*.gif,**/*.png,**/*.properties,**/demo/*.png,**/demo/*.html"/>
+    </resources>
+    <javadoc>
+      <include name="com/l2fprod/common/beans/editor/*.java"/>
+      <include name="com/l2fprod/common/propertysheet/*.java"/>
+    </javadoc>
+    <classpath>
+      <pathelement location="lib/jcalendar.jar"/>
+      <pathelement location="lib/nachocalendar.jar"/>
+    </classpath>
+  </component>
+
+  <component name="tasks"
+	     mainclass="com.l2fprod.common.demo.Main">
+    <depend>shared</depend>
+    <fileset dir="src/java/tasks" includes="**" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/*Collap*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/*Task*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/*LinkButton*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/*Addon*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/tree/*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/LookAndFeelTweaks*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/*Layout*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/OS*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/JVM*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/ResourceManager*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/demo/Main*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/Version.java" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <resources>
+      <fileset dir="src/java/tasks" includes="**/*.gif,**/*.png,**/*.properties"/>
+      <fileset dir="src/java/shared" includes="**/*Task*.properties,**/util/AllRB*.properties,**/demo/*.png,**/demo/*.html"/>
+    </resources>
+    <javadoc>
+      <include name="com/l2fprod/common/swing/JTaskPane*.java"/>
+      <include name="com/l2fprod/common/swing/JLinkButton.java"/>
+    </javadoc>
+    <bean name="com/l2fprod/common/swing/JLinkButton.class"/>
+    <bean name="com/l2fprod/common/swing/JTaskPane.class"/>
+    <bean name="com/l2fprod/common/swing/JTaskPaneGroup.class"/>
+  </component>
+
+  <component name="totd"
+	     mainclass="com.l2fprod.common.demo.TOTDTest">
+    <depend>shared</depend>
+    <fileset dir="src/java/totd" includes="**" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/*Addon*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/LookAndFeelTweaks*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/*Layout*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/OS*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/JVM*" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <resources>
+      <fileset dir="src/java/totd" includes="**/*.gif,**/*.png,**/*.properties"/>
+      <fileset dir="src/java/shared" includes="**/util/AllRB*.properties,**/demo/*.png,**/demo/*.html"/>
+    </resources>
+    <javadoc>
+      <include name="com/l2fprod/common/swing/JTipOfTheDay.java"/>
+      <include name="com/l2fprod/common/swing/TipModel.java"/>
+      <include name="com/l2fprod/common/swing/tips/*.java"/>
+    </javadoc>
+  </component>
+
+  <component name="springrcp">
+    <depend>tasks</depend>
+    <depend>directorychooser</depend>
+    <external-depend groupId="org.springframework" artifactId="spring-richclient" version="2006.02.19"/>
+    <external-depend groupId="org.springframework" artifactId="spring" version="1.2.5"/>
+    <fileset dir="src/java/springrcp" includes="**"/>
+    <resources>
+      <fileset dir="src/java/springrcp" includes="**/*.gif,**/*.png,**/*.properties"/>
+    </resources>
+    <classpath>
+      <pathelement location="build/classes/tasks"/>
+      <pathelement location="build/classes/directorychooser"/>
+      <pathelement location="lib/spring/spring.jar"/>
+      <pathelement location="lib/spring/spring-richclient.jar"/>
+    </classpath>
+    <javadoc>
+      <include name="com/l2fprod/common/springrcp/*.java"/>
+    </javadoc>
+  </component>
+            
+  <component name="all"
+             mainclass="com.l2fprod.common.demo.Main"
+             isAll="true">
+    <fileset dir="src/java/buttonbar" includes="**" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/directorychooser" includes="**" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/fontchooser" includes="**" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/outlookbar" includes="**" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/sheet" includes="**" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/tasks" includes="**" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/totd" includes="**" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/shared" includes="**/Version.java" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <fileset dir="src/java/springrcp" includes="**" excludes="**/*.gif,**/*.png,**/*.jpg"/>
+    <resources>
+      <fileset dir="src/java/buttonbar" includes="**/*.gif,**/*.png,**/*.properties"/>
+      <fileset dir="src/java/directorychooser" includes="**/*.gif,**/*.png,**/*.properties"/>
+      <fileset dir="src/java/fontchooser" includes="**/*.gif,**/*.png,**/*.properties"/>
+      <fileset dir="src/java/outlookbar" includes="**/*.gif,**/*.png,**/*.properties"/>
+      <fileset dir="src/java/shared" includes="**/*.gif,**/*.png,**/*.properties,**/demo/*.png,**/demo/*.html"/>
+      <fileset dir="src/java/sheet" includes="**/*.gif,**/*.png,**/*.properties"/>
+      <fileset dir="src/java/tasks" includes="**/*.gif,**/*.png,**/*.properties"/>
+      <fileset dir="src/java/totd" includes="**/*.gif,**/*.png,**/*.properties"/>
+    </resources>
+    <javadoc>
+      <include name="com/l2fprod/common/swing/plaf/*.java"/>
+      <include name="com/l2fprod/common/swing/plaf/**/*Addon.java"/>
+      <include name="com/l2fprod/common/swing/BaseDialog*.java"/>
+      <include name="com/l2fprod/common/swing/BannerPanel.java"/>
+      <include name="com/l2fprod/common/swing/ButtonAreaLayout.java"/>
+      <include name="com/l2fprod/common/swing/LookAndFeelTweaks*.java"/>
+      <include name="com/l2fprod/common/swing/PercentLayout*.java"/>
+      <include name="com/l2fprod/common/swing/StatusBar*.java"/>
+      <include name="com/l2fprod/common/util/ResourceManager*.java"/>
+      <include name="com/l2fprod/common/util/converter/*.java"/>
+    </javadoc>
+    <bean name="com/l2fprod/common/swing/JCollapsiblePane.class"/>
+    <bean name="com/l2fprod/common/swing/PercentLayout.class"/>
+  </component>
+
+</components>
+

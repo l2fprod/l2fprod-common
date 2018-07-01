@@ -1,0 +1,152 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.l2fprod.common</groupId>
+  <artifactId>l2fprod-common-all</artifactId>
+  <packaging>pom</packaging>
+  <name>L2FProd.com Common Components</name>
+  <version>7.4-SNAPSHOT</version>
+  <description>Swing has lot of components built-in but still some are missing. This project
+    provides the developer community with these missing components, components inspired from modern
+    user interfaces. It provides a PropertySheet component, a collapsible task pane, a button bar, a
+    font chooser, a directory chooser.</description>
+  <issueManagement>
+    <system>bugzilla</system>
+    <url>https://l2fprod-common.dev.java.net/servlets/ProjectIssues</url>
+  </issueManagement>
+  <ciManagement>
+    <notifiers>
+      <notifier>
+        <address>l2fprod@dev.java.net</address>
+      </notifier>
+    </notifiers>
+  </ciManagement>
+  <inceptionYear>2004</inceptionYear>
+  <developers>
+    <developer>
+      <id>l2fprod</id>
+      <name>Frederic Lavigne</name>
+      <email>fred@L2FProd.com</email>
+      <url>http://www.L2FProd.com</url>
+      <organization>L2FProd.com</organization>
+      <roles>
+        <role>Project Owner</role>
+      </roles>
+    </developer>
+  </developers>
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <scm>
+    <connection>scm:cvs:pserver:guest@cvs.dev.java.net:/cvs:l2fprod-common</connection>
+    <developerConnection>scm:cvs:pserver:${maven.username}@cvs.dev.java.net:/cvs:l2fprod-common</developerConnection>
+    <url>https://l2fprod-common.dev.java.net/source/browse/l2fprod-common/</url>
+  </scm>
+  <organization>
+    <name>L2FProd.com</name>
+    <url>http://common.L2FProd.com</url>
+  </organization>
+  <mailingLists>
+    <mailingList>
+      <name>Announcement List</name>
+      <subscribe>announce-subscribe@l2fprod-common.dev.java.net</subscribe>
+      <unsubscribe>announce-unsubscribe@l2fprod-common.dev.java.net</unsubscribe>
+      <archive>https://l2fprod-common.dev.java.net/servlets/SummarizeList?listName=announce</archive>
+    </mailingList>
+    <mailingList>
+      <name>Developer List</name>
+      <subscribe>dev-subscribe@l2fprod-common.dev.java.net</subscribe>
+      <unsubscribe>dev-unsubscribe@l2fprod-common.dev.java.net</unsubscribe>
+      <archive>https://l2fprod-common.dev.java.net/servlets/SummarizeList?listName=dev</archive>
+    </mailingList>
+    <mailingList>
+      <name>Users List</name>
+      <subscribe>users-subscribe@l2fprod-common.dev.java.net</subscribe>
+      <unsubscribe>users-unsubscribe@l2fprod-common.dev.java.net</unsubscribe>
+      <archive>https://l2fprod-common.dev.java.net/servlets/SummarizeList?listName=users</archive>
+    </mailingList>
+  </mailingLists>
+  <build>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-ftp</artifactId>
+        <version>1.0-alpha-6</version>
+      </extension>
+    </extensions>
+    <plugins>
+      <plugin>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+        <inherited>true</inherited>
+      </plugin>
+    </plugins>
+  </build>
+  <modules>
+    <module>maven/buttonbar</module>
+    <module>maven/directorychooser</module>
+    <module>maven/fontchooser</module>
+    <module>maven/outlookbar</module>
+    <module>maven/shared</module>
+    <module>maven/sheet</module>
+    <module>maven/tasks</module>
+    <module>maven/totd</module>
+    <module>maven/springrcp</module>
+  </modules>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <distributionManagement>
+    <repository>
+      <id>ftp-l2fprod.com</id>
+      <url>ftp://ftp.L2FProd.com/maven2/</url>
+    </repository>
+  </distributionManagement>
+
+  <reporting>
+    <plugins>
+      <plugin>
+       <artifactId>maven-site-plugin</artifactId>
+       <configuration>
+         <siteDirectory>${basedir}/xdocs</siteDirectory>
+         <resourcesDirectory>${basedir}/xdocs/resources</resourcesDirectory>
+       </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-pmd-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+          <quiet>true</quiet>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <descriptor>maven/assembly-bin.xml</descriptor>
+          <finalName>l2fprod-common-${project.version}</finalName>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
+
+</project>

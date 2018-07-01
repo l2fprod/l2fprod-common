@@ -1,0 +1,9 @@
+.classpath
+.fbprefs
+.project
+build
+build.properties
+l2fprod-common-*
+target
+bin
+build

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="l2fprod-common" default="jar">
+
+  <property file="build.properties" />
+
+  <taskdef name="jreleaseinfo" 
+           classname="ch.oscg.jreleaseinfo.anttask.JReleaseInfoAntTask">
+    <classpath>
+      <pathelement location="lib/jreleaseinfo-1.2.0.jar"/>
+    </classpath>
+  </taskdef>
+
+  <patternset id="sources">
+    <include name="src/java/buttonbar/**"/>
+    <include name="src/java/directorychooser/**"/>
+    <include name="src/java/fontchooser/**"/>
+    <include name="src/java/shared/**"/>
+    <include name="src/java/sheet/**"/>
+    <include name="src/java/tasks/**"/>
+    <include name="src/java/totd/**"/>
+  </patternset>
+
+  <target name="init">
+    <property name="project" value="l2fprod-common"/>
+    <property name="project.fullname" value="L2FProd.com Common Components"/>
+    <property name="version" value="9.2"/>
+    <property name="year" value="2005-2009"/>
+
+    <tstamp>
+      <format property="build.time" pattern="MM/dd/yyyy hh:mm aa" locale="en"/>
+      <format property="build.version" pattern="yyyyMMdd" locale="en"/>
+    </tstamp>
+
+    <filter token="VERSION" value="${version}"/>
+    <filter token="PROJECT.FULLNAME" value="${project.fullname}"/>
+    <filter token="PROJECT.SHORTNAME" value="${project}"/>
+    <filter token="YEAR" value="${year}"/>
+
+    <property name="build.dir" value="build"/>
+    <mkdir dir="${build.dir}"/>
+
+    <property name="dist.dir" value="${project}-${version}"/>
+    <mkdir dir="${dist.dir}"/>
+
+    <jreleaseinfo targetDir="src/java/shared"
+                  packagename="com.l2fprod.common"
+                  classname="Version"
+                  project="${project}"
+                  version="${version}">
+      <parameter name="Year" value="${year}"/>
+      <parameter name="BuildTimestamp" value="${build.time}"/>
+    </jreleaseinfo>
+
+    <property name="dependency.dir" value="depend"/>
+    <mkdir dir="${dependency.dir}"/>
+
+    <xslt in="components.xml"
+          out="${build.dir}/build4components.xml"
+          style="make-components.xsl"/>
+  </target>
+
+  <target name="maven.prepare" depends="init">
+    <xslt in="components.xml"
+          out="maven/assembly-bin.xml"
+          style="make-assembly.xsl">
+    </xslt>
+    <xslt in="components.xml"
+          out="null.html"
+          style="make-pom.xsl" force="yes">
+      <param name="VERSION" expression="${version}"/>
+    </xslt>
+  </target>
+  <!--
+    Get some helpers from the web
+  -->
+  <target name="init.depend" depends="init">
+    <property name="proxy.host" value=""/>
+    <property name="proxy.port" value="80"/>
+    <echo>
+If you are behind a proxy or firewall, you can set the properties:
+  proxy.host
+  proxy.port
+    </echo>
+    <setproxy proxyhost="${proxy.host}"
+              proxyport="${proxy.port}"/>
+    <get src="https://l2fprod.dev.java.net/unbranded-source/browse/*checkout*/l2fprod/xdocs/xsl/changelog-text.xsl?rev=1.1&amp;content-type=application/xml"
+         dest="${dependency.dir}/changelog-text.xsl"
+         usetimestamp="yes"
+         ignoreerrors="yes"/>
+  	<get src="http://www.ibiblio.org/maven/commons-logging/jars/commons-logging-1.0.4.jar"
+  	     dest="lib/commons-logging-1.0.4.jar"
+  	     usetimestamp="yes"
+  	     ignoreerrors="yes"/>
+  	<get src="http://www.ibiblio.org/maven/commons-collections/jars/commons-collections-2.1.jar"
+  	     dest="lib/commons-collections-2.1.jar"
+  	     usetimestamp="yes"
+  	     ignoreerrors="yes"/>
+        <get src="http://maven2.l2fprod.com/com/toedter/jcalendar/1.2.2/jcalendar-1.2.2.jar"
+  	     dest="lib/jcalendar.jar"
+  	     usetimestamp="yes"
+  	     ignoreerrors="yes"/>
+        <get src="http://nachocalendar.sourceforge.net/demo/nachocalendar-0.21.jar"
+  	     dest="lib/nachocalendar.jar"
+  	     usetimestamp="yes"
+  	     ignoreerrors="yes"/>
+        <mkdir dir="lib/spring"/>
+        <get src="http://www.ibiblio.org/maven/org.springframework/jars/spring-1.2.5.jar"
+             dest="lib/spring/spring.jar"
+             usetimestamp="yes"
+             ignoreerrors="yes"/>
+        <get src="http://maven2.l2fprod.com/org/springframework/spring-richclient/SNAPSHOT/spring-richclient-SNAPSHOT.jar"
+             dest="lib/spring/spring-richclient.jar"
+             usetimestamp="yes"
+             ignoreerrors="yes"/>
+  </target>
+
+  <!--
+    Compile all components separately and generate a jar file for each
+    one
+  -->
+  <target name="jar" depends="init">
+    <ant antfile="${build.dir}/build4components.xml" target="jar"/>
+  </target>
+
+  <target name="dist" depends="jar">
+    <copy todir="${dist.dir}" file="LICENSE.txt" filtering="on"/>
+    <copy todir="${dist.dir}" file="README.txt" filtering="on"/>
+    <xslt in="xdocs/CHANGES.xml"
+          out="${dist.dir}/CHANGES.txt"
+          style="${dependency.dir}/changelog-text.xsl"/>
+
+    <!-- get all generated jars -->
+    <mkdir dir="${dist.dir}/lib"/>
+    <copy todir="${dist.dir}/lib">
+      <fileset dir="${build.dir}/jars" includes="*.jar"/>
+    </copy>
+
+    <!-- copy the source code from the "all" components -->
+    <mkdir dir="${dist.dir}/src"/>
+    <copy todir="${dist.dir}/src">
+      <fileset dir="${build.dir}/src/all" includes="**"/>
+    </copy>
+
+    <!-- generate the documentation -->
+    <ant antfile="${build.dir}/build4components.xml" target="javadoc"/>
+
+    <!-- zip the folder -->
+    <zip destfile="${project}-${version}-${build.version}.zip">
+      <zipfileset dir="${dist.dir}"
+                  prefix="${project}-${version}"/>
+    </zip>
+  </target>
+
+  <!--
+    Publish the new version of l2fprod-common
+  -->
+  <target name="publish" depends="init">
+    <!-- copy zip to dist folder -->
+    <copy todir="${publish.download.dir}"
+          file="${project}-${version}-${build.version}.zip"/>
+
+    <filter token="WEB" value="${publish.web.url}"/>
+    <!-- update the jnlp website with the new release -->
+    <!-- put skinlf.jar in jnlp folder -->
+    <copy todir="${publish.project.home}/jnlp/" filtering="on" overwrite="yes">
+      <fileset dir="src/jnlp" includes="*.jnlp"/>
+    </copy>
+    <copy file="${dist.dir}/lib/${project}-all.jar" todir="${publish.project.home}/jnlp/"/>
+
+    <!-- Sign all Jars -->
+    <signjar keystore="../common/keystore" alias="L2FProd.com" storepass="L2FProd.com">
+       <fileset dir="${publish.project.home}/jnlp" includes="*.jar"/>
+    </signjar>
+
+    <ftp server="${build.www.server}"
+	 userid="${build.www.userid}"
+	 password="${build.www.password}"
+	 remotedir="${build.www.remotedir}/jnlp"
+	 action="put"
+	 verbose="yes"
+	 depends="yes">
+      <fileset dir="${build.www.dir}/jnlp">
+        <include name="*"/>
+      </fileset>
+    </ftp>
+
+  </target>
+
+  <target name="clean" depends="init">
+    <delete dir="${build.dir}"/>
+    <delete dir="${dist.dir}"/>
+  </target>
+
+</project>
