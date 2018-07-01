@@ -75,8 +75,7 @@ Swing toolkit.
 ## Build
 
    ```
-   mvn initialize
-   mvn package
+   ant dist
    ```
 
 ## The Distribution
