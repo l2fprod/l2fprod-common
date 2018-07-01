@@ -1,0 +1,378 @@
+<?xml version="1.0"?>
+
+<changes title="History of Changes">
+
+  <release version="7.3" date="2007-03-17">
+    <action type="add">
+      German translation for DirectoryChooser
+    </action>
+    <action type="fix">
+      Fixed NPE in JOutlookBar and Java 6
+    </action>
+    <action type="update">
+      Synchronized JTaskPaneGroup with SwingX
+    </action>
+    <action type="add">
+      Added option on JTaskPaneGroup to prevent it from being expanded/collapsed
+    </action>
+    <action type="fix">
+      Minor tweak to the painting of JTaskPaneGroup icon to make it a real circle, not an oval.
+    </action>
+  </release>
+
+  <release version="6.11" date="2006-11-01">
+    <action type="fix">
+Fixed NPE in PropertySheet when used with Napkin Look And Feel
+    </action>
+    <action type="fix">
+Updated ColorPropertyEditor to be able to use it when the color is expressed as an integer
+    </action>
+    <action type="add">
+Added MutableListModel, adding move up/move down behaviors on a ListModel
+    </action>
+    <action type="fix">
+Ensure selectedFile gets selected in JDirectoryChooser if it was set before showing the directory chooser
+    </action>
+  </release>
+
+  <release version="6.9.1" date="2006-09-06">
+    <action type="fix">
+Fixed a regression in the management of look and feel addons
+    </action>
+  </release>
+
+  <release version="6.9" date="2006-09-02">
+    <action type="add">
+Added "Make New Folder" button on JDirectoryChooser and F5 key binding to refresh the view
+    </action>
+    <action type="update">
+Ease handling of PropertyVetoException by PropertySheet writeToObject method
+    </action>
+    <action type="add">
+Added Spring Rich Client binding for JDirectoryChooser (contributed by Ryan Sonnek)
+    </action>
+  </release>
+
+  <release version="6.5" date="2006-05-20">
+    <action type="add">
+Added option to keep the open/close states of properties and
+categories in PropertySheet
+    </action>
+    <action type="add">
+Added GroupOfTaskPaneGroup to synchronize together several
+JTaskPaneGroups
+    </action>
+    <action type="fix">
+Fixed compatibility issue of JOutlookBar with Synthetica (was throwing NPE)
+    </action>
+    <action type="fix">
+Fixed NPE in BasicOutlookBarUI if focus owner is null
+    </action>
+    <action type="update">
+Completed migration to Maven 2
+    </action>
+  </release>
+
+  <release version="6.2" date="2006-02-19">
+    <action type="add">
+Spring Rich Client integration for JTaskPane and JTaskPaneGroup
+    </action>
+    <action type="add">
+Initial support for Maven 2
+    </action>
+    <action type="fix">
+Fixed implementation of Property#clone()
+    </action>
+    <action type="add">
+New "toggle" action in JCollapsiblePane with different icons based on
+the pane "collapsible" status
+    </action>
+    <action type="update">
+New method in JFontChooser to be able to customize the FontChooser
+dialog before showing it
+    </action>
+  </release>
+
+  <release version="0.2-dev" date="2005-12-11">
+    <action type="fix">
+Fixed an issue in JOutlookBar occuring when programmatically removing
+the selected tab. Issue happened only with an animated JOutlookBar.
+    </action>
+    <action type="update">
+Disable the PropertySheet renderer when a Property is not editable
+    </action>
+  </release>
+
+  <release version="0.2-dev" date="2005-11-06">
+    <action type="fix">
+Issue 63 : Ease navigation in PropertySheet
+Use "tab" and "shift tab" to navigate between rows
+Use "space" to toggle categories and nested properties
+Use "F2" to edit value
+    </action>
+    <action type="fix">
+Fixed NPE in directory chooser when updating look and feel.
+    </action>
+  </release>
+
+  <release version="0.2-dev" date="2005-09-18">
+    <action type="fix">
+Issue 60: JTaskPaneGroup disappears when animation off
+    </action>
+    <action type="update">
+Made JTaskPaneGroup BiDi compliant (backport from SwingX)
+    </action>
+    <action type="add">
+Issue 57: Added a split between properties and description in PropertySheet
+    </action>
+    <action type="add">
+Issue 6: Initial Support for nested Properties
+    </action>
+    <action type="update">
+In PropertySheet#writeToObject, ensure PropertySheet commits editing
+    </action>
+    <action type="update">
+Force PropertySheet to commit editing on focus lost
+    </action>
+    <action type="update">
+LookAndFeelAddons now track look and feel changes by default
+    </action>
+  </release>
+
+  <release version="0.2-dev" date="2005-08-26">
+    <action type="fix">
+Fixed an issue where the look and feel customization gets lost when a
+new UIManager internal appContext was created. This manifests when
+reloading applets or when using the components in an IDE with an
+exception "UIDefaults.getUI() failed: no ComponentUI class for: xxxx".
+    </action>
+  </release>
+
+  <release version="0.2-dev" date="2005-08-17">
+    <action type="fix">
+JaskPaneGroup scrollOnExpanded was broken following the	introduction of the new fade in/out effect
+    </action>
+    <action type="fix">
+Fixed NullPointerException in DirectoryPropertyEditor if initial directory was null
+    </action>
+    <action type="update">
+Added method to JTipOfTheDay to force the display of the dialog even if user chooses to not show it
+    </action>
+    <action type="update">
+Added French and German bundle for PropertySheet and TipOfTheDay components
+    </action>
+  </release>
+
+  <release version="0.2-dev" date="2005-07-10">
+    <action type="add">
+Added JTipOfTheDay component and dialog
+    </action>
+    <action type="update">
+Renamed JTaskPaneGroup "text" property to "title"
+    </action>
+  </release>
+
+  <release version="0.1" date="2005-06-09">
+    <action type="fix">
+Prevented resize of PropertySheet value column
+    </action>
+    <action type="fix">
+Fixed getBestMatchAddon which was always returning classic look for XP even if visual styles were used.
+    </action>
+    <action type="fix">
+Fixed painting issues under Linux with GTK look and feel
+    </action>
+  </release>
+  
+  <release version="0.1-dev" date="2005-05-26">
+    <action type="add">
+Added animation to JOutlookBar transitions
+    </action>
+    <action type="add">
+Added support for Homestead and Silver Windows XP styles to
+JTaskPaneGroup
+    </action>
+    <action type="fix">
+Overriden "remove" methods in JTaskPaneGroup to delegate to the real
+contentPane.
+    </action>
+    <action type="update">
+Added setAnimated() on JTaskPaneGroup to turn off animation.
+    </action>
+  </release>
+
+  <release version="0.1-dev" date="2005-05-13">
+    <action type="add">
+Use MetalLookAndFeelAddons for all subclasses of Metal Look And Feel
+(this includes JGoodies Look and Feel)
+    </action>
+    <action type="fix">
+Fix a bug in JOutlookBar where insertTab() did not work as expected
+    </action>
+    <action type="fix">
+Prevented random NullPointerException in JTaskPaneGroup (reported by
+one user but not reproduced)
+    </action>
+    <action type="fix">
+Adding and removing tasks dynamically to the JTaskPaneGroup was not
+updating the height of the pane
+    </action>
+  </release>
+
+  <release version="0.1-dev" date="2005-05-08">
+    <action type="add">
+Two new UIs for JTaskPaneGroup: Metal Ocean theme (JDK1.5) and Glossy
+(targeted to Mac OS X look and feel)
+    </action>
+    <action type="add">
+New UI for JTaskPaneGroup when using the Metal Ocean theme (JDK1.5)
+    </action>
+    <action type="update">
+Reworked the JTaskPaneGroup animation with fade in/fade out effect.
+Code contributed to the JDNC project
+    </action>
+    <action type="fix">
+Fixed issue: Sort button is not toggled when sorting is
+programmatically enabled
+    </action>
+  </release>
+
+  <release version="0.1-dev" date="2005-04-23">
+    <action type="add">
+Allow to specify alignment (left, center, right) of text in
+JOutlookBar headers
+    </action>
+    <action type="add">
+Added removeProperty to BaseBeanInfo
+    </action>
+    <action type="add">
+Added tableCellRendererClass on ExtendedPropertyDescriptor. If set, it
+is used by PropertyRendererRegistry
+    </action>
+    <action type="add">
+Added scrollOnExpands on JTaskPaneGroup. When true and if there is a
+JScrollPane in the container hierarchy of the JTaskPaneGroup, the
+JScrollPane will be scrolled to make the JTaskPaneGroup visible.
+    </action>
+    <action type="update">
+Replaced PropertyEditorRegistry and PropertyRendererRegistry with
+factories, resp. PropertyEditorFactory and PropertyRendererFactory
+    </action>
+    <action type="update">
+Allow to override most of PropertySheetTable methods by removing
+"final"
+    </action>
+    <action type="fix">
+JFontChooser was not exposing the selectedFont property in its
+beaninfo.
+    </action>
+    <action type="fix">
+If JDirectoryChooser was not found,
+UserPreferences.getDirectoryChooser returns a simple JFileChooser but
+it was not setting the selection mode to DIRECTORIES_ONLY.
+    </action>
+  </release>
+
+  <release version="0.1-dev" date="2005-01-30">
+    <action type="update">
+Support for Date in the Property Sheet by using the JCalendar
+component from http://www.toedter.com and NachoCalendar from
+http://nachocalendar.sf.net.
+    </action>
+    <action type="fix">
+Fixed a compatibility issue with JOutlookBar and J2SE 5
+    </action>
+    <action type="fix">
+Worked around ClassCastException when beans were instanciated in
+Netbeans 3.6 and 4.0.
+    </action>
+    <action type="update">
+Added missing images for Java Beans (JButtonBar, 
+    </action>
+    <action type="update">
+Changes in the PropertySheet to support dynamic add/remove of
+Properties.
+    </action>
+  </release>
+
+  <release version="0.1-dev" date="2004-10-31">
+    <action type="fix">
+Fixed NPE in JOutlookBar after changing look and feel at runtime.
+    </action>
+    <action type="fix">
+NumberPropertyEditor now correctly edits decimal numbers. Also it
+allows dot and comma to be used as decimal separator.
+    </action>
+    <action type="fix">
+PropertySheetPanel uses the model of the table passed as parameter in
+constructor.
+    </action>
+    <action type="update">
+PropertyEditor can now be retrieved from the PropertyEditorManager and
+the PropertyDescriptor.
+    </action>
+    <action type="update">
+Scrollbars are shown in description panel of PropertySheet if the text
+is too long.
+    </action>
+    <action type="update">
+For textfield in the PropertySheet, the text is selected on focus
+gained.
+    </action>
+    <action type="update">
+Icons can be given to values in the ComboBoxPropertyEditor.
+    </action>
+  </release>
+
+  <release version="0.1-dev" date="2004-08-28">
+    <action type="update">
+Components have been split. One jar is now created per component. If
+you are just interested in one component, pick the jar of this
+component. A jar file with all components is also available.
+  
+Each jar embeds a simple demo of the component, just you run:
+ "java -jar l2fprod-common-foo.jar"
+where "foo" is the component you choose.
+    </action>
+    <action type="add">
+New JOutlookBar component.
+    </action>
+    <action type="add">
+Basic support for Java-Beans. Drop the library in your IDE to use the
+beans.
+    </action>
+  </release>
+
+  <release version="0.1-dev" date="2004-07-14">
+    <action type="add">
+TaskPanes are now animated when expanded and collapsed. Animation can
+be disabled through a property, see JTaskPaneGroup javadoc.
+    </action>
+    <action type="add">
+Added MetalLookAndFeelAddons and implemented UI for the TaskPane group.
+    </action>
+    <action type="update">
+FontChooser now delegates the available font lists to a data
+model. Windows pluggable UI for FontChooser has been reworked to add a
+splitpane between top lists and preview area.
+    </action>
+    <action type="add">
+LookAndFeelAddons adds a getBestMatchAddonClassName() method which
+returns the addon matching the current look and feel.
+    </action>
+    <action type="fix">
+Fixed a NullPointerException in the PropertySheet which happened when
+switching from Category/Flat view and having null categories for some
+properties or the row being edited.
+    </action>
+    <action type="fix">
+Fixed the description panel text in the PropertySheet to prevent
+"null" from being displayed.
+    </action>
+    <action type="fix">
+Made PropertyChangeSupport field of AbstractProperty
+transient. PropertyChangeListeners will not get serialized.
+    </action>
+  </release>
+
+</changes>

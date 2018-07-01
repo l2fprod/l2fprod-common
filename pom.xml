@@ -101,7 +101,6 @@
     <module>maven/sheet</module>
     <module>maven/tasks</module>
     <module>maven/totd</module>
-    <module>maven/springrcp</module>
   </modules>
   <dependencies>
     <dependency>

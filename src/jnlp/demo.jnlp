@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- JNLP File for L2FProd Common Components -->
+<jnlp spec="1.0+" codebase="@WEB@/jnlp" href="demo.jnlp">
+  <information>
+    <title>L2FProd.com Common Components</title>
+    <vendor>L2FProd.com</vendor>
+    <homepage href="@WEB@"/>
+    <description>Demo</description>
+    <offline-allowed/>
+  </information>
+  <resources> 
+    <j2se version="1.4+"/> 
+    <jar href="l2fprod-common-all.jar"/>
+  </resources> 
+  <application-desc main-class="com.l2fprod.common.demo.Main">
+  </application-desc>
+</jnlp>

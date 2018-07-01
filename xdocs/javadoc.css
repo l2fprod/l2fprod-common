@@ -1,0 +1,41 @@
+/* Apache Javadoc style sheet */
+
+/* Page background color */
+body { background-color: #FFFFFF }
+
+BODY  {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: small; color: #000000}
+TD  {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: small; color: #000000}
+TR  {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: small; color: #000000}
+FONT  {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: small; color: #000000}
+I  {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: small; color: #000000;font-style: italic}
+BIG  {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: small; color: #000000;font-weight: bold}
+TH  {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: small; color: #000000;font-weight: bold}
+H1 {font-family: Arial, sans-serif; font-size: small; color: navy;}
+STRONG {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: small; color: #000000;text-decoration: none; margin-left: 0px}
+H2 {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 15pt; color: #000000;text-decoration: none; margin-left: 0px}
+H3 {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: small; color: #000000;text-decoration: none; margin-left: 0px}
+PRE {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: small; color: #000000}
+BLOCKQUOTE {font-family: Verdana, Arial, Helvetica, sans-serif; font-size:x-small; color: #000000}
+
+/* Table colors */
+.TableHeadingColor     { background: #D0D0D0 }
+.TableSubHeadingColor  { background: #E0E0E0 }
+.TableRowColor         { background: #F9F9F9 }
+
+/* Navigation bar fonts and colors */
+.NavBarCell1    { background-color:#D0D0D0;}
+.NavBarCell1Rev { background-color:#A0A0A0;}
+.NavBarFont1    { font-family: Verdana, Arial, Helvetica, sans-serif; color:#000000;}
+.NavBarFont1Rev { font-family: Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF;}
+.NavBarCell2    { font-family: Verdana, Arial, Helvetica, sans-serif; background-color:#E0E0E0;}
+.NavBarCell3    { font-family: Verdana, Arial, Helvetica, sans-serif; background-color:#F0F0F0;}
+
+/* Font used in left-hand frame lists */
+.FrameTitleFont   { font-size: medium; font-family: Helvetica, Arial, sans-serif }
+.FrameHeadingFont { font-size: medium; font-family: Helvetica, Arial, sans-serif }
+.FrameItemFont    { font-size: small; font-family: Helvetica, Arial, sans-serif }
+
+/* Link colors styling */
+A:link { color: #0000A0 }          /* unvisited link */
+A:visited { color: #A00000 }       /* visited links */
+A:active { color: #00A000 }        /* active links */

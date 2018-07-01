@@ -64,19 +64,54 @@
           </archive>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-install-plugin</artifactId>
+        <version>2.5</version>
+        <executions>
+            <execution>
+                <id>spring-richclient</id>
+                <phase>initialize</phase>
+                <goals>
+                    <goal>install-file</goal>
+                </goals>
+                <configuration>
+                  <groupId>org.springframework</groupId>
+                  <artifactId>spring-richclient</artifactId>
+                  <version>2006.02.19</version>
+                  <packaging>jar</packaging>
+                  <file>../../lib/spring/spring-richclient.jar</file>
+                </configuration>
+            </execution>
+            <execution>
+                <id>spring</id>
+                <phase>initialize</phase>
+                <goals>
+                    <goal>install-file</goal>
+                </goals>
+                <configuration>
+                  <groupId>org.springframework</groupId>
+                  <artifactId>spring</artifactId>
+                  <version>1.2.5</version>
+                  <packaging>jar</packaging>
+                  <file>../../lib/spring/spring.jar</file>
+                </configuration>
+            </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
   <dependencies>
     <dependency>
       <groupId>com.l2fprod.common</groupId>
       <artifactId>l2fprod-common-tasks</artifactId>
-      <version>6.9.1</version>
+      <version>7.4-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>com.l2fprod.common</groupId>
       <artifactId>l2fprod-common-directorychooser</artifactId>
-      <version>6.9.1</version>
+      <version>7.4-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
     <dependency>

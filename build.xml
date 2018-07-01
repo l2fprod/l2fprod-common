@@ -23,7 +23,7 @@
   <target name="init">
     <property name="project" value="l2fprod-common"/>
     <property name="project.fullname" value="L2FProd.com Common Components"/>
-    <property name="version" value="9.2"/>
+    <property name="version" value="7.4-SNAPSHOT"/>
     <property name="year" value="2005-2009"/>
 
     <tstamp>
@@ -124,7 +124,7 @@ If you are behind a proxy or firewall, you can set the properties:
 
   <target name="dist" depends="jar">
     <copy todir="${dist.dir}" file="LICENSE.txt" filtering="on"/>
-    <copy todir="${dist.dir}" file="README.txt" filtering="on"/>
+    <copy todir="${dist.dir}" file="README.md" filtering="on"/>
     <xslt in="xdocs/CHANGES.xml"
           out="${dist.dir}/CHANGES.txt"
           style="${dependency.dir}/changelog-text.xsl"/>
